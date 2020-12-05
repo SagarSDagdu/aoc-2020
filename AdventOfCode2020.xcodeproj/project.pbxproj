@@ -18,6 +18,8 @@
 		ACA9FD6A2577830E0019ED22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9FD692577830E0019ED22 /* Extensions.swift */; };
 		ACA9FD8325788E9F0019ED22 /* 03 in Resources */ = {isa = PBXBuildFile; fileRef = ACA9FD8225788E9F0019ED22 /* 03 */; };
 		ACA9FD8725788EB30019ED22 /* Challenge03.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9FD8625788EB30019ED22 /* Challenge03.swift */; };
+		ACE84C84257A80F600ACBACD /* 04 in Resources */ = {isa = PBXBuildFile; fileRef = ACE84C83257A80F600ACBACD /* 04 */; };
+		ACE84C86257A812100ACBACD /* Challenge04.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE84C85257A812100ACBACD /* Challenge04.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		ACA9FD692577830E0019ED22 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACA9FD8225788E9F0019ED22 /* 03 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 03; sourceTree = "<group>"; };
 		ACA9FD8625788EB30019ED22 /* Challenge03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge03.swift; sourceTree = "<group>"; };
+		ACE84C83257A80F600ACBACD /* 04 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 04; sourceTree = "<group>"; };
+		ACE84C85257A812100ACBACD /* Challenge04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Challenge04.swift; path = AdventOfCode2020/Challenge04.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 				ACA9FD3725776CE80019ED22 /* Challenge01.swift */,
 				ACA9FD42257774B00019ED22 /* Challenge02.swift */,
 				ACA9FD8625788EB30019ED22 /* Challenge03.swift */,
+				ACE84C85257A812100ACBACD /* Challenge04.swift */,
 			);
 			path = AdventOfCode2020;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 				ACA9FD1F2577696B0019ED22 /* 01 */,
 				ACA9FD6525777AE70019ED22 /* 02 */,
 				ACA9FD8225788E9F0019ED22 /* 03 */,
+				ACE84C83257A80F600ACBACD /* 04 */,
 				ACA9FD18257769460019ED22 /* Info.plist */,
 			);
 			path = InputFiles;
@@ -206,6 +212,7 @@
 			files = (
 				ACA9FD6625777AE70019ED22 /* 02 in Resources */,
 				ACA9FD8325788E9F0019ED22 /* 03 in Resources */,
+				ACE84C84257A80F600ACBACD /* 04 in Resources */,
 				ACA9FD202577696B0019ED22 /* 01 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +227,7 @@
 				ACA9FD43257774B00019ED22 /* Challenge02.swift in Sources */,
 				ACA9FD6A2577830E0019ED22 /* Extensions.swift in Sources */,
 				ACA9FD3825776CE80019ED22 /* Challenge01.swift in Sources */,
+				ACE84C86257A812100ACBACD /* Challenge04.swift in Sources */,
 				ACA9FD27257769C90019ED22 /* InputFileHelper.swift in Sources */,
 				ACA9FD3225776BFB0019ED22 /* Challenge.swift in Sources */,
 				ACA9FD8725788EB30019ED22 /* Challenge03.swift in Sources */,
