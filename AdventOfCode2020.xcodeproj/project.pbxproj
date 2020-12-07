@@ -18,6 +18,9 @@
 		ACA9FD6A2577830E0019ED22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9FD692577830E0019ED22 /* Extensions.swift */; };
 		ACA9FD8325788E9F0019ED22 /* 03 in Resources */ = {isa = PBXBuildFile; fileRef = ACA9FD8225788E9F0019ED22 /* 03 */; };
 		ACA9FD8725788EB30019ED22 /* Challenge03.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9FD8625788EB30019ED22 /* Challenge03.swift */; };
+		ACAFF2B7257DEDD8005F62D6 /* Challenge07.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAFF2B6257DEDD8005F62D6 /* Challenge07.swift */; };
+		ACAFF2B9257DEDE7005F62D6 /* 07 in Resources */ = {isa = PBXBuildFile; fileRef = ACAFF2B8257DEDE7005F62D6 /* 07 */; };
+		ACAFF2BB257E0DB5005F62D6 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAFF2BA257E0DB5005F62D6 /* Graph.swift */; };
 		ACE84C84257A80F600ACBACD /* 04 in Resources */ = {isa = PBXBuildFile; fileRef = ACE84C83257A80F600ACBACD /* 04 */; };
 		ACE84C86257A812100ACBACD /* Challenge04.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE84C85257A812100ACBACD /* Challenge04.swift */; };
 		ACE84C88257B592D00ACBACD /* 05 in Resources */ = {isa = PBXBuildFile; fileRef = ACE84C87257B592D00ACBACD /* 05 */; };
@@ -53,6 +56,9 @@
 		ACA9FD692577830E0019ED22 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACA9FD8225788E9F0019ED22 /* 03 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 03; sourceTree = "<group>"; };
 		ACA9FD8625788EB30019ED22 /* Challenge03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge03.swift; sourceTree = "<group>"; };
+		ACAFF2B6257DEDD8005F62D6 /* Challenge07.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge07.swift; sourceTree = "<group>"; };
+		ACAFF2B8257DEDE7005F62D6 /* 07 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 07; sourceTree = "<group>"; };
+		ACAFF2BA257E0DB5005F62D6 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		ACE84C83257A80F600ACBACD /* 04 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 04; sourceTree = "<group>"; };
 		ACE84C85257A812100ACBACD /* Challenge04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Challenge04.swift; path = AdventOfCode2020/Challenge04.swift; sourceTree = SOURCE_ROOT; };
 		ACE84C87257B592D00ACBACD /* 05 */ = {isa = PBXFileReference; lastKnownFileType = text; path = 05; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 				ACE84C85257A812100ACBACD /* Challenge04.swift */,
 				ACE84C89257B595100ACBACD /* Challenge05.swift */,
 				ACE84C8B257C9B8000ACBACD /* Challenge06.swift */,
+				ACAFF2B6257DEDD8005F62D6 /* Challenge07.swift */,
 			);
 			path = AdventOfCode2020;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 				ACE84C83257A80F600ACBACD /* 04 */,
 				ACE84C87257B592D00ACBACD /* 05 */,
 				ACE84C8D257C9BA900ACBACD /* 06 */,
+				ACAFF2B8257DEDE7005F62D6 /* 07 */,
 				ACA9FD18257769460019ED22 /* Info.plist */,
 			);
 			path = InputFiles;
@@ -140,6 +148,7 @@
 			children = (
 				ACA9FD3125776BFB0019ED22 /* Challenge.swift */,
 				ACA9FD692577830E0019ED22 /* Extensions.swift */,
+				ACAFF2BA257E0DB5005F62D6 /* Graph.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -225,6 +234,7 @@
 				ACE84C88257B592D00ACBACD /* 05 in Resources */,
 				ACA9FD6625777AE70019ED22 /* 02 in Resources */,
 				ACA9FD8325788E9F0019ED22 /* 03 in Resources */,
+				ACAFF2B9257DEDE7005F62D6 /* 07 in Resources */,
 				ACE84C84257A80F600ACBACD /* 04 in Resources */,
 				ACE84C8E257C9BA900ACBACD /* 06 in Resources */,
 				ACA9FD202577696B0019ED22 /* 01 in Resources */,
@@ -240,7 +250,9 @@
 			files = (
 				ACA9FD43257774B00019ED22 /* Challenge02.swift in Sources */,
 				ACE84C8A257B595100ACBACD /* Challenge05.swift in Sources */,
+				ACAFF2B7257DEDD8005F62D6 /* Challenge07.swift in Sources */,
 				ACA9FD6A2577830E0019ED22 /* Extensions.swift in Sources */,
+				ACAFF2BB257E0DB5005F62D6 /* Graph.swift in Sources */,
 				ACA9FD3825776CE80019ED22 /* Challenge01.swift in Sources */,
 				ACE84C86257A812100ACBACD /* Challenge04.swift in Sources */,
 				ACE84C8C257C9B8000ACBACD /* Challenge06.swift in Sources */,
