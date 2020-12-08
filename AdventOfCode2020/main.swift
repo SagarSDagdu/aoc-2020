@@ -7,6 +7,6 @@
 
 import Foundation
 
-let challenge = Challenge07()
+let challenge = Challenge08()
 print(challenge.solvePartOne())
 print(challenge.solvePartTwo())
