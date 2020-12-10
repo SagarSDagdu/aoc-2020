@@ -10,7 +10,7 @@ import Cocoa
 class Challenge09: Challenge {
     
     lazy var numbers = InputFileHelper.readLinesFromFile(fileName: "09").map { Int($0)! }
-        
+    
     func solvePartOne() -> String {
         let preambleIndices = 0...24
         for index in 0 ..< numbers.count {
