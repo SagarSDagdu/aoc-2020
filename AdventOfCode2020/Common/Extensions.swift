@@ -29,3 +29,9 @@ extension String {
     }
 
 }
+
+extension Collection where Element: Collection {
+    func contains(index: Index, subIndex: Element.Index) -> Bool {
+       indices.contains(index) && self[index].indices.contains(subIndex)
+   }
+}
