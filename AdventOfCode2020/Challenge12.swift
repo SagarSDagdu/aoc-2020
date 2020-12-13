@@ -44,33 +44,7 @@ struct Point {
     var x: Int
     var y: Int
     
-    static func fromCardinalPoint(_ cardinalPoint: CardinalPoint) -> Point {
-        let x = abs(cardinalPoint.east) > 0 ? cardinalPoint.east : -cardinalPoint.west
-        let y = abs(cardinalPoint.north) > 0 ? cardinalPoint.north : -cardinalPoint.south
-        
-        return Point(x: x, y: y)
-    }
-    
-    func toCardinalPoint() -> CardinalPoint {
-        var cardinalPoint = CardinalPoint(north: 0, south: 0, east: 0, west: 0)
-        
-        if x > 0 {
-            cardinalPoint.east = x
-        } else {
-            cardinalPoint.west = -x
-        }
-        
-        if y > 0 {
-            cardinalPoint.north = y
-        } else {
-            cardinalPoint.south = -y
-        }
-        
-        return cardinalPoint
-    }
-    
-    
-    func rotatingBy(angle: RotationAngle, onHand hand: Hand) -> Point {
+    func pointByRotating(at angle: RotationAngle, onHand hand: Hand) -> Point {
         var newPoint = Point(x:0, y:0)
         var rotationAngle = angle
         
@@ -87,6 +61,21 @@ struct Point {
             newPoint = Point(x: -y, y: x)
         }
         
+        return newPoint
+    }
+    
+    func pointByMoving(in direction: CardinalDirection, units: Int) -> Point {
+        var newPoint = self
+        switch direction  {
+        case .north:
+            newPoint.y += units
+        case .east:
+            newPoint.x += units
+        case .south:
+            newPoint.y -= units
+        case .west:
+            newPoint.x -= units
+        }
         return newPoint
     }
 }
@@ -136,9 +125,22 @@ struct CardinalPoint {
         return newPoint
     }
     
-    func pointAfterForwarding(byUnits units: Int, fromWaypoint waypoint: CardinalPoint) -> CardinalPoint {
-        let timesPoint =  CardinalPoint(north: waypoint.north * units, south: waypoint.south * units, east: waypoint.east * units, west: waypoint.west * units)
-        return self + timesPoint
+    func pointAfterMoving(byUnits units: Int, withWaypoint waypoint: Point) -> CardinalPoint {
+        var newPoint = CardinalPoint(north: north, south: south, east: east, west: west)
+        
+        if waypoint.y > 0 {
+            newPoint.north += waypoint.y * units
+        } else {
+            newPoint.south += abs(waypoint.y) * units
+        }
+        
+        if waypoint.x > 0 {
+            newPoint.east += waypoint.x * units
+        } else {
+            newPoint.west += abs(waypoint.x) * units
+        }
+        
+        return newPoint
     }
     
     func pointAfterMoving(in direction: CardinalDirection, by units: Int) -> CardinalPoint {
@@ -156,14 +158,6 @@ struct CardinalPoint {
         
         return newPoint
     }
-    
-    func pointAfterRotating(by angle: RotationAngle, on hand: Hand) -> CardinalPoint {
-        return Point.fromCardinalPoint(self).rotatingBy(angle: angle, onHand: hand).toCardinalPoint()
-    }
-    
-    static func + (lhs: CardinalPoint, rhs: CardinalPoint) -> CardinalPoint {
-        return CardinalPoint(north: lhs.north + rhs.north, south: lhs.south + rhs.south, east: lhs.east + rhs.east, west: lhs.west + rhs.west)
-    }
 }
 
 class Challenge12: Challenge {
@@ -173,11 +167,11 @@ class Challenge12: Challenge {
         
         var shipLocation = CardinalPoint(north: 0, south: 0, east: 0, west: 0)
         var currentDirection = CardinalDirection.east
-        
+
         for inputLine in input {
             let directionString = String(inputLine.prefix(1))
             let units = Int((inputLine as NSString).substring(from: 1))!
-            
+
             if directionString == "F" {
                 shipLocation = shipLocation.pointAfterForwarding(in: currentDirection, by: units)
             } else if let rotationHand = Hand(rawValue: directionString), let angle = RotationAngle(rawValue: units) { // rotation
@@ -193,23 +187,22 @@ class Challenge12: Challenge {
     
     func solvePartTwo() -> String {
         var shipLocation = CardinalPoint(north: 0, south: 0, east: 0, west: 0)
-        var waypointLocation = CardinalPoint(north: 1, south: 0, east: 10, west: 0)
-        let currentDirection = CardinalDirection.east
+        var waypointLocation = Point(x: 10, y: 1)
         
         for inputLine in input {
             let directionString = String(inputLine.prefix(1))
             let units = Int((inputLine as NSString).substring(from: 1))!
             
             if directionString == "F" {
-                shipLocation = shipLocation.pointAfterForwarding(byUnits: units, fromWaypoint: waypointLocation)
+                shipLocation = shipLocation.pointAfterMoving(byUnits: units, withWaypoint: waypointLocation)
             } else if let rotationHand = Hand(rawValue: directionString), let angle = RotationAngle(rawValue: units) { // rotation
-                waypointLocation = waypointLocation.pointAfterRotating(by: angle, on: rotationHand)
+                waypointLocation = waypointLocation.pointByRotating(at: angle, onHand: rotationHand)
             } else {
-                waypointLocation = waypointLocation.pointAfterMoving(in: CardinalDirection(rawValue: directionString)!, by: units)
+                waypointLocation = waypointLocation.pointByMoving(in: CardinalDirection(rawValue: directionString)!, units: units)
             }
             
             print("Instruction:\(directionString)\(units)")
-            print("Current location : \(shipLocation), current direction : \(currentDirection)")
+            print("Current location : \(shipLocation)")
             print("Waypoint location : \(waypointLocation)")
             print("******")
         }
